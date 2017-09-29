@@ -1,0 +1,30 @@
+{
+  "name": "liri-desktop",
+  "productName": "Liri-Desktop",
+  "version": "1.0.0",
+  "description": "Application that showcases node.js",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowmar/liri-node-app.git"
+  },
+  "author": "Omar Imam <omar.imam@kineticvortex.com> (https://github.com/flowmar)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flowmar/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/flowmar/liri-node-app#readme",
+  "dependencies": {
+    "request": "2.81.0",
+    "spotify-web-api-node": "2.4.0",
+    "twitter": "1.7.1",
+    "url-parse": "1.1.9"
+  },
+  "devDependencies": {
+    "electron": "1.7.8",
+    "electron-packager": "9.1.0"
+  }
+}
