@@ -7,7 +7,7 @@ const {
     app,
     BrowserWindow,
     Menu,
-    ipcMain: ipc
+    // ipcMain: ipc
 } = electron;
 
 let mainWindow;
@@ -21,7 +21,7 @@ app.on('ready', _ => {
     });
 
     // Load html file onto window
-    mainWindow.loadURL(`file://${__dirname}/liri.html`);
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
 
     // Auto open devTools
     mainWindow.webContents.openDevTools();
@@ -35,5 +35,6 @@ app.on('ready', _ => {
     const menuContents = Menu.buildFromTemplate(menuTemplate(mainWindow));
 
     // Set the menu as the application menu
-    Menu.setApplicationMenu(menuContents)
-})
+    Menu.setApplicationMenu(menuContents);
+
+});

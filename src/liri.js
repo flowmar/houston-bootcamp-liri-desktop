@@ -9,13 +9,18 @@ const spotifyKeys = require("./spotify-keys.js");
 
 const request = require('request');
 
-var fs = require('fs');
+const fs = require('fs');
 
 // Declare variables
-var arguments = process.argv;
+const arguments = process.argv;
 
 // Authentication for Twitter
-const client = new Twitter({consumer_key: twitterKeys.consumer_key, consumer_secret: twitterKeys.consumer_secret, access_token_key: twitterKeys.access_token_key, access_token_secret: twitterKeys.access_token_secret});
+const client = new Twitter({
+    consumer_key: twitterKeys.consumer_key,
+    consumer_secret: twitterKeys.consumer_secret,
+    access_token_key: twitterKeys.access_token_key,
+    access_token_secret: twitterKeys.access_token_secret
+});
 
 // Authentication for Spotify
 
@@ -40,36 +45,39 @@ if (arguments[2] === "my-tweets") {
     // Send a get request to grab the last 20 tweets from the indicated user's
     // timeline
     client.get('statuses/user_timeline', {
-        screen_name: "kiki_flyingman",
-        count: 20
-    }, function (error, tweets, response) {
+            screen_name: "kiki_flyingman",
+            count: 20
+        }, function (error, tweets, response) {
 
-        if (error)
-            throw error;
+            if (error)
+                throw error;
 
-else {
-            // For all of the tweets that are in the response...
-            for (var i = 0; i < tweets.length; i++) {
-                // Log the tweet text to the console
-                console.log(((i + 1) + "." + tweets[i].text));
+            else {
+                // For all of the tweets that are in the response...
+                for (var i = 0; i < tweets.length; i++) {
+                    // Log the tweet text to the console
+                    console.log(((i + 1) + "." + tweets[i].text));
 
-                // Log the time that the tweet was created
-                console.log("Created at: " + tweets[i].created_at + "\n");
+                    // Log the time that the tweet was created
+                    console.log("Created at: " + tweets[i].created_at + "\n");
+                }
             }
-        }
-        // console.log(JSON.stringify(tweets, null, 2));
-    } // If the command is 'spotify this song'...
+            // console.log(JSON.stringify(tweets, null, 2));
+        } // If the command is 'spotify this song'...
     );
 } else if (arguments[2] === "spotify-this-song") {
 
     // Set song equal to the 4th argument
-    var song = arguments[3];
+    let song = arguments[3];
 
     // Set artist equatl to the 5th argument
-    var artist = arguments[4];
+    let artist = arguments[4];
 
     // Create a new instance of the SpotifyWebApi client
-    var spotifyApi = new SpotifyWebApi({clientId: clientId, clientSecret: clientSecret});
+    const spotifyApi = new SpotifyWebApi({
+        clientId: clientId,
+        clientSecret: clientSecret
+    });
 
     // If the there is no song, default to "Saw the Sign"
     if (arguments[3] == "") {

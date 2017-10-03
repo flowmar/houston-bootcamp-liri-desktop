@@ -9,18 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flowmar/liri-node-app.git"
+    "url": "git+https://github.com/flowmar/desktop.git"
   },
   "author": "Omar Imam <omar.imam@kineticvortex.com> (https://github.com/flowmar)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flowmar/liri-node-app/issues"
+    "url": "https://github.com/flowmar/liri-desktop/issues"
   },
-  "homepage": "https://github.com/flowmar/liri-node-app#readme",
+  "homepage": "https://github.com/flowmar/liri-desktop#readme",
   "dependencies": {
+    "jquery": "3.2.1",
     "request": "2.81.0",
     "spotify-web-api-node": "2.4.0",
     "twitter": "1.7.1",
+    "typeit": "4.4.1",
     "url-parse": "1.1.9"
   },
   "devDependencies": {

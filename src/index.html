@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<!-- ******************************************
+*  Author : Omar Imam
+*  Created On : Thu Sep 28 2017
+*  File : index.html
+******************************************* -->
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Omar Imam" content="Author">
+        <title>LIRI Desktop</title>
+        <!-- <script>
+            window.$ = window.jQuery = require('./path/to/jquery');
+        </script> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
+
+        <link rel="stylesheet" href="./liri.css">
+
+
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col"></div>
+                <div id="display" class="p-2 col">
+                    <div><span class="type-it p-3 m-2"></span></div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-10">
+                <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item"><button class="btn btn-cyan btn-lg">My Tweets</button></li>
+                    <li class="list-inline-item"><button class="btn btn-dark-green btn-lg">Spotify This Song</button></li>
+                    <li class="list-inline-item"><button class="btn btn-danger btn-lg">Movie This</button></li>
+                    <li class="list-inline-item"><button class="btn btn-amber btn-lg">Do What It Says</button></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <script>
+            if (typeof module === 'object') {
+                window.module = module;
+                module = undefined;
+            }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/4.4.1/typeit.min.js"></script>
+        <script>
+            if (window.module) module = window.module;
+        </script>
+
+        <script>
+            // require('./main');
+            // require('./liri');
+
+            $('.type-it').typeIt({
+                strings: ['Welcome to LIRI.',
+                    'Please click a command button below to simulate entering it into the command line.',
+                    'If the command requires any arguments, boxes will appear for you to fill in.'
+                ]
+            });
+        </script>
+    </body>
+
+</html>
