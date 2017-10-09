@@ -1,11 +1,20 @@
 body {
-    color: seagreen;
+    color: #0DB154;
     background-color: #000;
+}
+
+input {
+    color: white;
+    text-align: center;
+}
+
+label {
+    color: royalblue;
 }
 
 #display {
     margin-top: 2rem;
-    background-color: rgba(24, 75, 7, 0.4);
+    background-color: rgba(24, 75, 7, 0.2);
     height: 80vh;
     width: 100%;
     -webkit-box-sizing: border-box;

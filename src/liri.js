@@ -1,6 +1,8 @@
 // Dependencies
 const Twitter = require('twitter');
 
+const Stream = require('user-stream');
+
 const twitterKeys = require('./keys.js');
 
 const SpotifyWebApi = require('spotify-web-api-node');
@@ -22,6 +24,12 @@ const client = new Twitter({
     access_token_secret: twitterKeys.access_token_secret
 });
 
+const stream = new Stream({
+    consumer_key: twitterKeys.consumer_key,
+    consumer_secret: twitterKeys.consumer_secret,
+    access_token_key: twitterKeys.access_token_key,
+    access_token_secret: twitterKeys.access_token_secret
+});
 // Authentication for Spotify
 
 const clientId = spotifyKeys.clientId;
@@ -29,7 +37,7 @@ const clientSecret = spotifyKeys.clientSecret;
 
 /* console.log(client);
 
- var stream = client.stream('user');
+ var stream = client.stream('user');*/
 
 stream.on('data', function (event) {
     console.log(event && event.text);
@@ -37,16 +45,15 @@ stream.on('data', function (event) {
 
 stream.on('error', function (error) {
     throw error;
- });*/
+});
 
 // console.log(arguments); console.log(client); If the command is 'my-tweets'...
 if (arguments[2] === "my-tweets") {
     console.log("@Kiki_flyingman's Last 20 tweets:\n");
-    // Send a get request to grab the last 20 tweets from the indicated user's
+    // Send a get request to grab the last 20 tweets from the indicated user 's
     // timeline
     client.get('statuses/user_timeline', {
             screen_name: "kiki_flyingman",
-            count: 20
         }, function (error, tweets, response) {
 
             if (error)
@@ -62,8 +69,9 @@ if (arguments[2] === "my-tweets") {
                     console.log("Created at: " + tweets[i].created_at + "\n");
                 }
             }
-            // console.log(JSON.stringify(tweets, null, 2));
-        } // If the command is 'spotify this song'...
+            console.log(JSON.stringify(tweets, null, 2));
+        }
+        //  If the command is 'spotify this song'..
     );
 } else if (arguments[2] === "spotify-this-song") {
 
@@ -149,6 +157,9 @@ if (arguments[2] === "my-tweets") {
     console.log(command);
 };
 
+function executeSpotify() {
+
+}
 /*
 |movie-this '<movie name here>'
 ||| This will output:
