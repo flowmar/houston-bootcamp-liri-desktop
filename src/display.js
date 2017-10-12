@@ -22,17 +22,17 @@ console.log(songTitle + ' by ' + artistName);
 
 $('#spotify').on('click', e => {
   $('#button-area-2').html(`
-<input type=\"text\" id=\"song-title\"/>
-<label htmlFor=\"song-title\">Song Title</label>
+<input type=\"text\" id=\"song-title\" class=\"animated fadeIn\"/>
+<label htmlFor=\"song-title\" class=\"animated fadeInDown\">Song Title</label>
 <br/>
-<input type=\"text\" id=\"artist-name\"/>
-<label htmlFor=\"artist-name\">Artist</label>`);
+<input type=\"text\" id=\"artist-name\" class=\"animated fadeIn\"/>
+<label htmlFor=\"artist-name\" class=\"animated fadeInUp\" >Artist</label>`);
 
   console.log(songTitle + ' by ' + artistName);
 
   if (songTitle !== '' || artistName !== '') {
     $('#submit').html(`
-          <button class=\"btn btn-elegant\" onclick={setSpotify()}>SUBMIT</button>
+          <button class=\"btn btn-elegant animated fadeInUpBig\" onclick={setSpotify()}>SUBMIT</button>
           `);
   }
 });
