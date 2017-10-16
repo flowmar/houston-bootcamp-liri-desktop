@@ -1,3 +1,4 @@
+const spotify = require('./spotify.js');
 // Declare variables
 let songTitle;
 let artistName;
@@ -12,13 +13,13 @@ function setSpotify() {
 
   songTitle = songInput[0].value;
   artistName = artistInput[0].value;
-  console.log(songTitle + ' by ' + artistName);
-  executeSpotify(songTitle, artistName);
+  console.log(`${songTitle} by ${artistName}`);
+  // spotify.executeSpotify(songTitle, artistName);
 }
 
-function executeSpotify(songTitle, artistName) {}
+spotify.executeSpotify(songTitle, artistName);
 
-console.log(songTitle + ' by ' + artistName);
+console.log(`${songTitle} by ${artistName}`);
 
 $('#spotify').on('click', e => {
   $('#button-area-2').html(`
@@ -28,7 +29,7 @@ $('#spotify').on('click', e => {
 <input type=\"text\" id=\"artist-name\" class=\"animated fadeIn\"/>
 <label htmlFor=\"artist-name\" class=\"animated fadeInUp\" >Artist</label>`);
 
-  console.log(songTitle + ' by ' + artistName);
+  console.log(`${songTitle} by ${artistName}`);
 
   if (songTitle !== '' || artistName !== '') {
     $('#submit').html(`
