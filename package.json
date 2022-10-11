@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "electron": "15.5.5",
-    "electron-packager": "9.1.0"
+    "electron-packager": "16.0.0"
   }
 }
