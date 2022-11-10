@@ -29,7 +29,7 @@
     "user-stream": "0.0.8"
   },
   "devDependencies": {
-    "electron": "15.5.5",
+    "electron": "18.3.7",
     "electron-packager": "9.1.0"
   }
 }
